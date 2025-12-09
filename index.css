@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: url(img/background.png) no-repeat center center / cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+}
+
+.add-task-container {
+  margin: 15vh 0px 40px;
+  width: 40%;
+  height: 90px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+#task-input {
+  flex: 5;
+  width: 100%;
+  font-size: 25px;
+  border-radius: 7px;
+  padding: 15px;
+}
+
+button {
+  border-radius: 7px;
+  background-color: #fff;
+  transition: 0.3s;
+  font-size: 20px;
+  font-weight: bold;
+  flex: 1;
+  cursor: pointer;
+}
+
+i {
+  height: 100%;
+  width: 100%;
+  align-content: center;
+}
+
+.add-task-btn {
+  color: green;
+  border: green 2px solid;
+}
+
+.add-task-btn:hover {
+  background-color: green;
+  color: #fff;
+}
+
+.task-list {
+  width: 40%;
+  height: auto;
+  padding: 20px;
+  background-color: transparent;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  border-bottom: rgb(199, 199, 199) solid 1px;
+  padding-bottom: 15px;
+}
+
+.task-title {
+  list-style-type: none;
+  font-size: 22px;
+  align-content: center;
+  flex: 3;
+  height: 100%;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+.task-btns {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  flex: 2;
+  gap: 5px;
+  width: 130px;
+  height: 100%;
+}
+.task-btns button {
+  max-width: 40px;
+  max-height: 40px;
+  aspect-ratio: 1/1;
+}
+
+.finish-task-btn {
+  color: green;
+  border: green 1px solid;
+}
+
+.finished {
+  color: cornflowerblue;
+  border: cornflowerblue 1px solid;
+}
+
+.edit-task-btn {
+  color: orange;
+  border: orange 1px solid;
+}
+.delete-task-btn {
+  color: red;
+  border: red 1px solid;
+}
+
+.finish-task-btn:hover {
+  color: #fff;
+  background-color: green;
+}
+
+.finished:hover {
+  background-color: cornflowerblue;
+}
+
+.edit-task-btn:hover {
+  color: #fff;
+  background-color: orange;
+}
+
+.delete-task-btn:hover {
+  color: #fff;
+  background-color: red;
+}
+
+br {
+  border: 2px solid grey;
+  margin: 20px 0;
+}

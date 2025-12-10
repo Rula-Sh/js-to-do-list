@@ -4,7 +4,13 @@ const TaskInput = document.querySelector("#task-input");
 const AddTaskBtn = document.querySelector(".add-task-btn");
 const TaskList = document.querySelector(".task-list");
 
-AddTaskBtn.addEventListener("click", function () {
+// Create element on button clicked or when pressing on enter
+AddTaskBtn.addEventListener("click", createElement); //using createElement() is invalid, it doesn’t pass the function, it calls the function immediately, which returns undefined to the addEventListener. "would have been valid if the function returns another function"
+TaskInput.addEventListener("keypress", function (e) {
+  if (e.keyCode === 13) createElement();
+});
+
+function createElement() {
   if (TaskInput.value === "") {
     // add pop-up
   } else {
@@ -75,4 +81,4 @@ AddTaskBtn.addEventListener("click", function () {
       }
     });
   }
-});
+}

@@ -8,7 +8,10 @@
     <!-- Font Awsome Link -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
     <title>To Do List</title>
   </head>
@@ -22,12 +25,16 @@
 
     <div class="task-list"></div>
 
+    <div class="no-input-pop-up">
+      <i class="fa-solid fa-triangle-exclamation warning"></i>
+      <span>Please input a task first.</span>
+    </div>
+
     <script src="index.js"></script>
   </body>
 </html>
 
 <!-- 
    TODO:
-   - Create a popup when the input is empty
    - Enable editing a task feature (close editing also with the button or when clicking outside the task or clicking Esc)
 -->

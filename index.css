@@ -150,3 +150,45 @@ br {
   border: 2px solid grey;
   margin: 20px 0;
 }
+
+.no-input-pop-up {
+  background-color: #fff8bf;
+  border-radius: 15px;
+  width: 20%;
+  min-width: 300px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 20px;
+  padding: 10px;
+  font-size: 22px;
+  display: none;
+
+  animation-name: slide-left;
+  animation-duration: 0.8s;
+}
+
+.warning {
+  width: auto;
+  font-size: 25px;
+  padding-right: 7px;
+  color: #ffe100;
+}
+
+@keyframes slide-left {
+  0% {
+    right: -40%;
+  }
+  100% {
+    right: 0;
+  }
+}
+
+@keyframes slide-right {
+  100% {
+    right: -40%;
+  }
+  0% {
+    right: 0;
+  }
+}

@@ -12,7 +12,7 @@ TaskInput.addEventListener("keypress", function (e) {
 
 function createElement() {
   if (TaskInput.value === "") {
-    // add pop-up
+    showPopup();
   } else {
     TaskList.style.backgroundColor = "#fff";
 
@@ -81,4 +81,17 @@ function createElement() {
       }
     });
   }
+}
+
+function showPopup() {
+  document.querySelector(".no-input-pop-up").style.display = "block";
+  document.querySelector(".no-input-pop-up").style.animationName = "slide-left";
+
+  setTimeout(() => {
+    document.querySelector(".no-input-pop-up").style.animationName =
+      "slide-right";
+    setTimeout(() => {
+      document.querySelector(".no-input-pop-up").style.display = "none";
+    }, 700);
+  }, 4000);
 }

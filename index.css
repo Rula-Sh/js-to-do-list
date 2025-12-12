@@ -93,22 +93,31 @@ i {
   word-wrap: break-word;
 }
 
+.edit-input {
+  width: 100%;
+  height: 40px;
+  flex: 5;
+  font-size: 22px;
+  border-radius: 7px;
+  padding: 8px;
+}
+
 .task-btns {
   display: flex;
   justify-content: end;
   align-items: center;
-  flex: 2;
   gap: 5px;
-  width: 130px;
+  width: auto;
   height: 100%;
 }
+
 .task-btns button {
-  max-width: 40px;
-  max-height: 40px;
-  aspect-ratio: 1/1;
+  width: 40px;
+  height: 40px;
 }
 
-.finish-task-btn {
+.finish-task-btn,
+.update-task-btn {
   color: green;
   border: green 1px solid;
 }
@@ -122,12 +131,15 @@ i {
   color: orange;
   border: orange 1px solid;
 }
-.delete-task-btn {
+
+.delete-task-btn,
+.cancel-edit-task-btn {
   color: red;
   border: red 1px solid;
 }
 
-.finish-task-btn:hover {
+.finish-task-btn:hover,
+.update-task-btn:hover {
   color: #fff;
   background-color: green;
 }
@@ -141,7 +153,8 @@ i {
   background-color: orange;
 }
 
-.delete-task-btn:hover {
+.delete-task-btn:hover,
+.cancel-edit-task-btn:hover {
   color: #fff;
   background-color: red;
 }

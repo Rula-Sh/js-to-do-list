@@ -5,14 +5,13 @@ const AddTaskBtn = document.querySelector(".add-task-btn");
 const TaskList = document.querySelector(".task-list");
 
 // Create element on button clicked or when pressing on enter
-AddTaskBtn.addEventListener("click", createElement); //using createElement() is invalid, it doesn’t pass the function, it calls the function immediately, which returns undefined to the addEventListener. "would have been valid if the function returns another function"
+AddTaskBtn.addEventListener("click", createTask); //using createElement() is invalid, it doesn’t pass the function, it calls the function immediately, which returns undefined to the addEventListener. "would have been valid if the function returns another function"
 TaskInput.addEventListener("keypress", function (e) {
-  if (e.keyCode === 13) createElement();
+  if (e.keyCode === 13) createTask();
 });
 
 // cancel all tasks edits if exist when pressing Esc
 document.addEventListener("keydown", function (e) {
-  console.log(e.key);
   if (e.key === "Escape") {
     let cancelTaskEdit = document.querySelectorAll(".cancel-edit-task-btn");
     if (cancelTaskEdit) {
@@ -23,11 +22,18 @@ document.addEventListener("keydown", function (e) {
   }
 });
 
-function createElement() {
+function createTask() {
   if (TaskInput.value === "") {
     showPopup();
   } else {
     TaskList.style.backgroundColor = "#fff";
+
+    // add line break between tasks
+    if (TaskList.firstChild) {
+      let taskBreak = document.createElement("span");
+      taskBreak.classList.add("break");
+      TaskList.appendChild(taskBreak);
+    }
 
     // Create a task item and its descendants
     let task = document.createElement("div");
@@ -67,15 +73,14 @@ function createElement() {
     finishBtn.addEventListener("click", function (e) {
       let target = e.target;
       let targetedFinishBtn = target.parentElement;
+      let taskTitle = targetedFinishBtn.parentElement.parentElement.firstChild;
       if (!istaskChecked) {
-        targetedFinishBtn.parentElement.parentElement.firstChild.style.textDecoration =
-          "line-through";
+        taskTitle.style.textDecoration = "line-through";
         targetedFinishBtn.innerHTML = `<i class="fa-solid fa-rotate-left"></i>`;
         targetedFinishBtn.classList.add("finished");
         istaskChecked = true;
       } else {
-        targetedFinishBtn.parentElement.parentElement.firstChild.style.textDecoration =
-          "none";
+        taskTitle.style.textDecoration = "none";
         targetedFinishBtn.innerHTML = `<i class="fa-solid fa-check"></i>`;
         targetedFinishBtn.classList.remove("finished");
         istaskChecked = false;
@@ -141,6 +146,7 @@ function createElement() {
 
     deleteBtn.addEventListener("click", function (e) {
       let target = e.target;
+
       target.parentElement.parentElement.parentElement.remove();
 
       // Remove TaskList background if i deleted the last child

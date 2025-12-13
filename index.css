@@ -75,12 +75,11 @@ i {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
   width: 100%;
   height: auto;
   box-sizing: border-box;
-  border-bottom: rgb(199, 199, 199) solid 1px;
-  padding-bottom: 15px;
+  padding: 0 10px;
 }
 
 .task-title {
@@ -159,9 +158,9 @@ i {
   background-color: red;
 }
 
-br {
-  border: 2px solid grey;
-  margin: 20px 0;
+.break {
+  border-top: rgb(199, 199, 199) solid 1px;
+  width: 100%;
 }
 
 .no-input-pop-up {
@@ -172,8 +171,8 @@ br {
   position: fixed;
   top: 0;
   right: 0;
-  margin: 20px;
-  padding: 10px;
+  margin: 25px;
+  padding: 13px;
   font-size: 22px;
   display: none;
 

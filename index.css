@@ -14,9 +14,9 @@ body {
 }
 
 .add-task-container {
-  margin: 15vh 0px 40px;
+  position: relative;
   width: 40%;
-  height: 90px;
+  margin: 15vh 0px 40px;
   padding: 20px;
   background-color: #fff;
   border-radius: 20px;
@@ -56,6 +56,18 @@ i {
 .add-task-btn:hover {
   background-color: green;
   color: #fff;
+}
+
+.clear-tasks-btn {
+  position: absolute;
+  right: -50px;
+  align-self: center;
+  background-color: transparent;
+  border: 0px;
+  color: red;
+  font-size: 30px;
+  flex: 0;
+  display: none;
 }
 
 .task-list {

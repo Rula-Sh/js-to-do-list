@@ -2,6 +2,7 @@
 
 const TaskInput = document.querySelector("#task-input");
 const AddTaskBtn = document.querySelector(".add-task-btn");
+const clearTasksBtn = document.querySelector(".clear-tasks-btn");
 const TaskList = document.querySelector(".task-list");
 
 // Create element on button clicked or when pressing on enter
@@ -9,6 +10,9 @@ AddTaskBtn.addEventListener("click", createTask); //using createElement() is inv
 TaskInput.addEventListener("keypress", function (e) {
   if (e.keyCode === 13) createTask();
 });
+
+// Clear all tasks if clicked on the main trash icon
+clearTasksBtn.addEventListener("click", clearTasks);
 
 // cancel all tasks edits if exist when pressing Esc
 document.addEventListener("keydown", function (e) {
@@ -27,6 +31,7 @@ function createTask() {
     showPopup();
   } else {
     TaskList.style.backgroundColor = "#fff";
+    clearTasksBtn.style.display = "block";
 
     // add line break between tasks
     if (TaskList.firstChild) {
@@ -67,6 +72,7 @@ function createTask() {
 
     TaskList.appendChild(task);
     TaskInput.value = "";
+    clearTasksBtn.style.display = "block";
 
     let istaskChecked = false;
 
@@ -152,9 +158,17 @@ function createTask() {
       // Remove TaskList background if i deleted the last child
       if (!TaskList.firstChild) {
         TaskList.style.backgroundColor = "transparent";
+        clearTasksBtn.style.display = "none";
       }
     });
   }
+}
+
+function clearTasks() {
+  TaskInput.value = "";
+  TaskList.innerHTML = "";
+  TaskList.style.backgroundColor = "transparent";
+  clearTasksBtn.style.display = "none";
 }
 
 function showPopup() {
